@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips /tmp/full.png --cropOffset 4300 0 -c 1300 1440 --out /tmp/steps_before.png)",
+      "Bash(sips -g pixelHeight /tmp/steps_before.png)",
+      "Bash(sips /tmp/full.png --cropOffset 5200 0 -c 1100 1440 --out /tmp/steps_b2.png)",
+      "Bash(sips -g pixelHeight /tmp/steps_b2.png)",
+      "Bash(node -e \"console.log\\('node', process.version\\); console.log\\('WebSocket', typeof WebSocket\\)\")",
+      "Bash(sed -i '' 's/v=20260602-motion3/v=20260602-motion4/g' index.html)",
+      "Bash(node -e \"const c=require\\('fs'\\).readFileSync\\('styles.css','utf8'\\); const o=\\(c.match\\(/{/g\\)||[]\\).length, cl=\\(c.match\\(/}/g\\)||[]\\).length; console.log\\('braces', o===cl?'OK':'MISMATCH'\\);\")",
+      "Bash(node /tmp/shot.js file://__TRACKED_VAR__/index.html '#steps' /tmp/steps_after.png 1440 900)",
+      "Bash(sips -g pixelHeight /tmp/steps_after.png)",
+      "Bash(node /tmp/shot.js file://__TRACKED_VAR__/index.html '#cafe' /tmp/cafe_after.png 1440 900)",
+      "Bash(node /tmp/shot.js file://__TRACKED_VAR__/index.html '#week' /tmp/week_after.png 1440 900)",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 1440 900 '#who=/tmp/a_who.png' '#how=/tmp/a_how.png' .level=/tmp/a_level.png '#price=/tmp/a_price.png' '#faq=/tmp/a_faq.png' '#signup=/tmp/a_signup.png')",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 390 844 '#who=/tmp/m_who.png' '#how=/tmp/m_how.png' '#week=/tmp/m_week.png' '#steps=/tmp/m_steps.png' .level=/tmp/m_level.png)",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 390 844 .copy-block=/tmp/m_how_body.png .level__copy--narrow=/tmp/m_level2.png)",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 390 844 '#week=/tmp/v_week_m.png' .copy-block=/tmp/v_how_m.png)",
+      "Bash(node /tmp/shot.js file://__TRACKED_VAR__/index.html '#week' /tmp/v_week_d.png 1440 900)",
+      "Bash(sed -i '' 's/v=20260602-motion4/v=20260602-motion5/g' index.html)",
+      "Bash(node /tmp/shot.js file://__TRACKED_VAR__/index.html '#week' /tmp/bal_d.png 1440 900)",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 390 844 '#week=/tmp/bal_m.png')",
+      "Bash(sed -i '' 's/v=20260602-motion5/v=20260602-motion6/g' index.html)",
+      "Bash(node -e \"const c=require\\('fs'\\).readFileSync\\('styles.css','utf8'\\);const o=\\(c.match\\(/{/g\\)||[]\\).length,cl=\\(c.match\\(/}/g\\)||[]\\).length;console.log\\(o===cl?'OK':'MISMATCH'\\)\")",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 1440 900 '#who=/tmp/c_who.png' .level=/tmp/c_level.png '#faq=/tmp/c_faq.png' '#signup=/tmp/c_signup.png')",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 1440 900 '.who .join-inline=/tmp/col_who.png' '.level .join-inline=/tmp/col_level.png')",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 390 844 '.who .join-inline=/tmp/col_who_m.png')",
+      "Bash(node /tmp/shots.js file://__TRACKED_VAR__/index.html 390 844 '#cafe=/tmp/cafe_trim_m.png')"
+    ],
+    "additionalDirectories": [
+      "/tmp",
+      "/private/tmp"
+    ]
+  }
+}
