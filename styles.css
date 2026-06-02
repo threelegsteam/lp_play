@@ -709,11 +709,13 @@ h3 {
     radial-gradient(circle at 7% 78%, rgba(47, 74, 63, 0.08), transparent 24rem),
     linear-gradient(90deg, rgba(255, 255, 255, 0.7), transparent 52%),
     var(--bone);
+  padding-block: clamp(76px, 6.2vw, 104px);
 }
 
 .who__layout {
   display: grid;
-  gap: 34px;
+  width: min(100% - (var(--page-pad) * 2), var(--container));
+  gap: 30px;
 }
 
 .who__intro {
@@ -756,12 +758,12 @@ h3 {
 
 .who-card {
   position: relative;
-  min-height: 292px;
+  min-height: 310px;
   overflow: hidden;
   border: 1px solid rgba(47, 74, 63, 0.05);
   border-radius: var(--radius-tile);
   background: var(--beige);
-  padding: 24px;
+  padding: 26px;
   isolation: isolate;
   box-shadow: 0 18px 42px rgba(47, 74, 63, 0.06);
   transition:
@@ -873,7 +875,7 @@ h3 {
 }
 
 .who-card--lounge {
-  min-height: 350px;
+  min-height: 374px;
 }
 
 .who-card--chat p {
@@ -896,7 +898,7 @@ h3 {
     radial-gradient(circle at 18% 0, rgba(201, 122, 93, 0.23), transparent 34%),
     linear-gradient(135deg, var(--green), var(--green-deep));
   color: var(--on-dark);
-  padding: 24px;
+  padding: 28px;
   box-shadow: 0 24px 60px rgba(47, 74, 63, 0.16);
 }
 
@@ -961,8 +963,16 @@ h3 {
 }
 
 .arranged {
+  --arranged-max: var(--container);
+  --arranged-gutter: max(var(--page-pad), calc((100vw - var(--arranged-max)) / 2));
+  --arranged-width: min(calc(100vw - (var(--page-pad) * 2)), var(--arranged-max));
+  isolation: isolate;
   padding: 0;
   background: var(--green-deep);
+}
+
+.section.arranged {
+  padding: 0;
 }
 
 .arranged__top {
@@ -970,6 +980,8 @@ h3 {
 }
 
 .arranged__content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1030,23 +1042,28 @@ h3 {
 }
 
 .arranged__media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 60% 42%;
+  object-position: 78% 48%;
 }
 
 .arranged__steps {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 18px 22px;
   width: min(100% - (var(--page-pad) * 2), var(--container));
-  margin: 30px auto 56px;
+  margin: 24px auto 38px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-tile);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(13, 28, 22, 0.62);
+  backdrop-filter: blur(6px);
   padding: 26px 30px;
 }
 
@@ -1483,7 +1500,6 @@ h3 {
 }
 
 .signup__inner {
-  max-width: 860px;
   padding: 20px 0;
 }
 
@@ -1644,13 +1660,13 @@ h3 {
   overflow: hidden;
   background: var(--charcoal);
   color: var(--on-dark-dim);
-  padding: 64px var(--page-pad) 34px;
+  padding: 64px 0 34px;
 }
 
 .footer__grid {
   display: grid;
   gap: 36px;
-  width: min(100%, var(--container));
+  width: min(100% - (var(--page-pad) * 2), var(--container));
   margin: 0 auto;
 }
 
@@ -1707,7 +1723,7 @@ h3 {
 }
 
 .footer-marquee {
-  width: min(100%, var(--container));
+  width: min(100% - (var(--page-pad) * 2), var(--container));
   margin: 58px auto 0;
   border-block: 1px solid rgba(255, 255, 255, 0.16);
   padding: 18px 0;
@@ -1718,7 +1734,7 @@ h3 {
 }
 
 .copyright {
-  width: min(100%, var(--container));
+  width: min(100% - (var(--page-pad) * 2), var(--container));
   margin: 28px auto 0;
   color: rgba(255, 255, 255, 0.42);
   font-size: 0.9rem;
@@ -1800,7 +1816,7 @@ h3 {
   .who__layout {
     grid-template-columns: 1fr;
     align-items: start;
-    gap: 40px;
+    gap: 34px;
   }
 
   .who__intro {
@@ -1834,7 +1850,8 @@ h3 {
 
   .who__grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-auto-rows: minmax(260px, auto);
+    grid-auto-rows: minmax(284px, auto);
+    gap: 10px;
   }
 
   .who-card--lounge,
@@ -1867,12 +1884,12 @@ h3 {
   }
 
   .who-card {
-    min-height: 268px;
-    padding: 22px;
+    min-height: 312px;
+    padding: 24px;
   }
 
   .who-card:nth-child(-n + 3) {
-    min-height: 332px;
+    min-height: 370px;
   }
 
   .who-card h3 {
@@ -1900,7 +1917,8 @@ h3 {
 
   .who-cta {
     grid-template-columns: 64px 1fr;
-    padding: 28px;
+    min-height: 200px;
+    padding: 32px;
   }
 
   .who-cta .button {
@@ -1911,20 +1929,39 @@ h3 {
   .arranged__top {
     grid-template-columns: 1.05fr 1fr;
     align-items: stretch;
-    min-height: 560px;
+    min-height: clamp(580px, calc(100svh - var(--header-height) - 170px), 700px);
+  }
+
+  .arranged.dark-section > .arranged__top {
+    position: static;
+    z-index: auto;
   }
 
   .arranged__media {
-    min-height: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0 0 0 36%;
+    z-index: 0;
+    min-height: 0;
+    pointer-events: none;
   }
 
   .arranged__media::after {
-    background: linear-gradient(90deg, var(--green-deep), transparent 30%);
+    background:
+      linear-gradient(90deg, var(--green-deep), rgba(35, 58, 48, 0.86) 20%, rgba(35, 58, 48, 0.26) 48%, transparent 76%),
+      linear-gradient(0deg, rgba(35, 58, 48, 0.22), transparent 36%);
+  }
+
+  .arranged__media img {
+    object-position: 70% 48%;
   }
 
   .arranged__content {
-    padding: 64px var(--page-pad);
+    padding: clamp(52px, 6vh, 72px) 56px clamp(48px, 5vh, 64px) var(--arranged-gutter);
+  }
+
+  .arranged__steps {
+    margin-top: -34px;
+    width: var(--arranged-width);
   }
 
   .anti-promise {
@@ -1955,11 +1992,12 @@ h3 {
   }
 
   .who-card {
-    padding: 26px;
+    min-height: 318px;
+    padding: 28px;
   }
 
   .who-card:nth-child(-n + 3) {
-    min-height: 340px;
+    min-height: 388px;
   }
 
   .who-card h3 {
@@ -1980,7 +2018,12 @@ h3 {
 
   .who-cta {
     grid-template-columns: 64px 1fr auto;
-    padding: 28px 32px;
+    min-height: 208px;
+    padding: 34px 40px;
+  }
+
+  .who-cta__title {
+    max-width: 520px;
   }
 
   .who-cta .button {
@@ -2013,26 +2056,26 @@ h3 {
 
 @media (min-width: 1280px) {
   .who__layout {
-    grid-template-columns: minmax(390px, 430px) 1fr;
-    gap: 44px;
+    grid-template-columns: minmax(420px, 460px) minmax(0, 1fr);
+    gap: 52px;
   }
 
   .who__intro {
     position: sticky;
-    top: calc(var(--header-height) + 44px);
-    min-height: 560px;
-    padding-top: 34px;
+    top: calc(var(--header-height) + 34px);
+    min-height: 640px;
+    padding-top: 18px;
   }
 
   .who__intro h2 {
-    max-width: 430px;
-    font-size: clamp(4.45rem, 4.7vw, 5.35rem);
+    max-width: 460px;
+    font-size: clamp(4.75rem, 4.9vw, 5.85rem);
   }
 
   .who__arrow {
     display: block;
-    width: 172px;
-    margin: 28px 0 0 auto;
+    width: 190px;
+    margin: 34px 0 0 auto;
     color: rgba(47, 74, 63, 0.72);
     fill: none;
     stroke: currentColor;
@@ -2084,17 +2127,15 @@ h3 {
   }
 
   .who-card h3 {
-    max-width: 84%;
-    font-size: 2.02rem;
+    font-size: 1.72rem;
   }
 
   .who-card p {
-    max-width: 74%;
+    max-width: 14.5rem;
   }
 
-  .who-card--gym p,
   .who-card--chat p {
-    max-width: 68%;
+    max-width: 12.4rem;
   }
 
   .horizontal-viewport {
@@ -2110,6 +2151,24 @@ h3 {
   .activity-card,
   .step-item {
     scroll-snap-align: start;
+  }
+
+  .steps .horizontal-viewport {
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .steps .step-track {
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+  }
+
+  .steps .step-item {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 0;
+    scroll-snap-align: none;
   }
 
   .cafe {
@@ -2185,13 +2244,12 @@ h3 {
   }
 
   .who-card h3 {
-    max-width: 90%;
-    font-size: 1.9rem;
+    font-size: 1.42rem;
   }
 
   .who-card p {
-    max-width: 80%;
-    font-size: 0.88rem;
+    max-width: 13rem;
+    font-size: 0.72rem;
   }
 
   .who-card__tag {
