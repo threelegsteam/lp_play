@@ -1695,21 +1695,22 @@ h3 {
   }
 
   .who__layout {
-    grid-template-columns: minmax(330px, 0.74fr) minmax(620px, 1.5fr);
+    grid-template-columns: 1fr;
     align-items: start;
-    gap: 32px;
+    gap: 40px;
   }
 
   .who__intro {
-    position: sticky;
-    top: calc(var(--header-height) + 44px);
+    position: relative;
+    top: auto;
     align-self: start;
-    min-height: 560px;
-    padding-top: 34px;
+    min-height: auto;
+    padding-top: 0;
   }
 
   .who__intro h2 {
-    font-size: clamp(4rem, 5.55vw, 5.35rem);
+    max-width: 760px;
+    font-size: clamp(4rem, 6.5vw, 5.35rem);
   }
 
   .who__lead {
@@ -1721,15 +1722,7 @@ h3 {
   }
 
   .who__arrow {
-    display: block;
-    width: 172px;
-    margin: 28px 0 0 auto;
-    color: rgba(47, 74, 63, 0.72);
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    display: none;
   }
 
   .who__content {
@@ -1857,11 +1850,6 @@ h3 {
 }
 
 @media (min-width: 1180px) {
-  .who__layout {
-    grid-template-columns: minmax(400px, 430px) 1fr;
-    gap: 44px;
-  }
-
   .who__grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -1923,6 +1911,37 @@ h3 {
   }
 }
 
+@media (min-width: 1280px) {
+  .who__layout {
+    grid-template-columns: minmax(390px, 430px) 1fr;
+    gap: 44px;
+  }
+
+  .who__intro {
+    position: sticky;
+    top: calc(var(--header-height) + 44px);
+    min-height: 560px;
+    padding-top: 34px;
+  }
+
+  .who__intro h2 {
+    max-width: 430px;
+    font-size: clamp(4.45rem, 4.7vw, 5.35rem);
+  }
+
+  .who__arrow {
+    display: block;
+    width: 172px;
+    margin: 28px 0 0 auto;
+    color: rgba(47, 74, 63, 0.72);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
 @media (max-width: 759px) {
   .section {
     padding: 78px 0;
@@ -1952,10 +1971,6 @@ h3 {
     font-size: 1.35rem;
   }
 
-  .who__plant {
-    display: none;
-  }
-
   .who-card {
     min-height: 282px;
   }
@@ -1972,14 +1987,6 @@ h3 {
   .who-card--gym p,
   .who-card--chat p {
     max-width: 68%;
-  }
-
-  .who-illustration {
-    opacity: 0.76;
-  }
-
-  .who-illustration--lounge {
-    opacity: 0.84;
   }
 
   .horizontal-viewport {
@@ -2081,20 +2088,6 @@ h3 {
 
   .who-card__tag {
     font-size: 0.7rem;
-  }
-
-  .who-illustration {
-    width: 64%;
-    opacity: 0.56;
-  }
-
-  .who-illustration--lounge {
-    width: 78%;
-  }
-
-  .who-illustration--gym,
-  .who-illustration--city {
-    width: 72%;
   }
 
   .who-cta {
