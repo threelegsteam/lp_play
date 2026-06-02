@@ -4,6 +4,7 @@
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
   const mobileCta = document.querySelector("[data-mobile-cta]");
+  const stickyCtaSuppressors = Array.from(document.querySelectorAll(".arranged, #signup"));
   let selectedSport = "Падел";
   let headerTicking = false;
 
@@ -95,6 +96,10 @@
       ".who-card",
       ".who-cta",
       ".arranged__media",
+      ".arranged__lead",
+      ".arranged__features li",
+      ".arranged__cta",
+      ".arranged__steps",
       ".copy-block",
       ".activity-card",
       ".context-cta",
@@ -147,7 +152,14 @@
     const scrolled = window.scrollY > 100;
     header.classList.toggle("is-scrolled", scrolled);
     if (mobileCta) {
-      mobileCta.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.82);
+      const overlapsLocalCta = stickyCtaSuppressors.some((section) => {
+        const rect = section.getBoundingClientRect();
+        return rect.top < window.innerHeight * 0.88 && rect.bottom > header.offsetHeight + 32;
+      });
+      mobileCta.classList.toggle(
+        "is-visible",
+        window.innerWidth < 920 && window.scrollY > window.innerHeight * 0.82 && !overlapsLocalCta
+      );
     }
   }
 
