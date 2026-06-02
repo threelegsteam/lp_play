@@ -836,19 +836,26 @@ h3 {
 }
 
 .who-card h3 {
-  max-width: 74%;
+  max-width: none;
   margin-top: 18px;
   color: #303030;
-  font-size: clamp(2rem, 8vw, 2.35rem);
+  font-size: clamp(1.78rem, 7.2vw, 2.18rem);
   line-height: 0.98;
 }
 
+.who-card h3 span {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
 .who-card p {
-  max-width: 78%;
+  max-width: 15rem;
   margin-top: 16px;
-  color: var(--text);
-  font-size: 0.82rem;
-  line-height: 1.28;
+  color: rgba(58, 58, 58, 0.62);
+  font-size: 0.78rem;
+  line-height: 1.32;
 }
 
 .who-card__tag {
@@ -869,20 +876,8 @@ h3 {
   min-height: 350px;
 }
 
-.who-card--bag h3,
-.who-card--calendar h3,
-.who-card--city h3 {
-  max-width: 80%;
-}
-
-.who-card--gym h3,
-.who-card--chat h3 {
-  max-width: 76%;
-}
-
-.who-card--gym p,
 .who-card--chat p {
-  max-width: 72%;
+  max-width: 12.6rem;
 }
 
 .who-cta__mark::before {
