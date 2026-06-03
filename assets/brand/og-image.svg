@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="PlayUp — свои через игру">
+  <defs>
+    <linearGradient id="leftShade" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#111713" stop-opacity="0.92"/>
+      <stop offset="0.44" stop-color="#111713" stop-opacity="0.7"/>
+      <stop offset="0.72" stop-color="#111713" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#111713" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="bottomShade" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#111713" stop-opacity="0"/>
+      <stop offset="1" stop-color="#111713" stop-opacity="0.46"/>
+    </linearGradient>
+  </defs>
+
+  <image href="../images/hero.jpg" x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1200" height="630" fill="url(#leftShade)"/>
+  <rect width="1200" height="630" fill="url(#bottomShade)"/>
+  <rect x="0" y="0" width="1200" height="630" fill="#2f4a3f" opacity="0.12"/>
+
+  <g transform="translate(76 64)">
+    <circle cx="28" cy="28" r="27" fill="#233a30" stroke="#d48364" stroke-width="3"/>
+    <text x="28" y="36" text-anchor="middle" fill="#f7f6f2" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700">PU</text>
+    <text x="76" y="22" fill="#f7f6f2" font-family="Arial, sans-serif" font-size="19" font-weight="700">PlayUp</text>
+    <text x="76" y="48" fill="#d8d2c7" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2.6">БЕЛГРАД · СОЦИАЛЬНЫЙ СПОРТ</text>
+  </g>
+
+  <g transform="translate(76 222)">
+    <text x="0" y="0" fill="#f7f6f2" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="600">Свои</text>
+    <text x="0" y="92" fill="#f7f6f2" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="600">через игру.</text>
+    <rect x="4" y="116" width="184" height="7" fill="#d48364"/>
+  </g>
+
+  <text x="76" y="494" fill="#f7f6f2" font-family="Arial, sans-serif" font-size="27" font-weight="700">Игры в любой день, своя компания и кафе сразу после.</text>
+  <text x="76" y="536" fill="#d8d2c7" font-family="Arial, sans-serif" font-size="21">Приходишь один, уходишь со своими.</text>
+  <text x="76" y="580" fill="#d48364" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2.8">ПЕРВАЯ ИГРА БЕСПЛАТНО</text>
+</svg>

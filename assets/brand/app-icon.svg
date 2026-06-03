@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="PlayUp">
+  <rect width="512" height="512" fill="#2f4a3f"/>
+  <path
+    fill="#f7f6f2"
+    fill-rule="evenodd"
+    d="M104 70h224c108 0 181 69 181 168 0 103-75 170-185 170H221v82H104V70Zm117 103v132h98c42 0 70-26 70-66 0-39-28-66-70-66h-98Z"
+  />
+  <rect x="224" y="438" width="142" height="18" rx="9" fill="#d48364"/>
+</svg>
